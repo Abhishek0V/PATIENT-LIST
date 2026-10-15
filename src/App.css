@@ -1,0 +1,116 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f4f6fb;
+  color: #1f2937;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 1050px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ---------- Button ---------- */
+.toggle-btn {
+  padding: 0.55rem 1.1rem;
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.toggle-btn:hover { background: #4338ca; }
+.toggle-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.35);
+}
+
+/* ---------- Table card ---------- */
+.table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th, td {
+  padding: 0.85rem 1.1rem;
+  text-align: left;
+  border-bottom: 1px solid #eef0f4;
+}
+
+th {
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:nth-child(even) { background: #fafbfc; }
+tbody tr:hover { background: #eef2ff; }
+
+/* Reg. ID stands out slightly, Name is the main text */
+td:first-child { font-weight: 600; color: #4f46e5; white-space: nowrap; }
+td:nth-child(2) { font-weight: 500; color: #111827; }
+
+/* Keep long addresses readable without stretching the table */
+td:last-child { max-width: 260px; }
+
+.num { text-align: right; }
+
+/* ---------- Status messages ---------- */
+.status {
+  padding: 2rem 1rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .container { margin: 1.25rem auto; }
+  .header h1 { font-size: 1.4rem; }
+  th, td { padding: 0.7rem 0.8rem; }
+}
